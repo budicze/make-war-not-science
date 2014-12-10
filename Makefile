@@ -1,4 +1,3 @@
-CC=g++
 ifeq ($(OS),Windows_NT)
 	CFLAGS=-c -std=c++11 -Wall -pedantic -g -Wl,-subsystem,windows
 	LDFLAGS= -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
@@ -15,11 +14,11 @@ all: create_dir $(SOURCES) $(EXECUTABLE)
 create_dir:
 	mkdir -p obj/cards
 $(EXECUTABLE): $(OBJECTS) 
-	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
 
 #.cpp.o:
 $(OBJECTS): obj/%.o : %.cpp
-	$(CC) $(CFLAGS) $< -o $@
+	$(CXX) $(CFLAGS) $< -o $@
 
 clean:
 	rm -rf obj
