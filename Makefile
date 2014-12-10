@@ -9,9 +9,9 @@ else
 	CFLAGS=-c -std=c++11 -Wall -pedantic -g
 	LDFLAGS= -lSDL2 -lSDL2_image -lSDL2_ttf
 	ifeq ($(target),i386)
-		CFLAGS += " -m32"
-		CFLAGS += " -m32"
-		EXECUTABLE += "32"
+		CFLAGS +=  -m32
+		LDFLAGS +=  -m32
+		EXECUTABLE += -32bit
 	endif
 endif
 
