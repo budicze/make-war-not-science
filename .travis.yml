@@ -1,10 +1,12 @@
 language: cpp
-compiler:
-    - gcc
+env:
+    - CXX="g++"
+    - CXX="g++" target="i386"
 before_install:
-    - echo "yes" | sudo apt-add-repository ppa:zoogie/sdl2-snapshots
+    - sudo dpkg --add-architecture i386
+    - sudo add-apt-repository -y ppa:zoogie/sdl2-snapshots
     - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
     - sudo apt-get update -qq
-    - sudo apt-get install -qq libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev g++-4.8
+    - sudo apt-get install -qq libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-dev:i386 libsdl2-image-dev:i386 libsdl2-ttf-dev:i386 g++-4.8 g++-4.8-multilib
     - export CXX="g++-4.8"
 script: make
