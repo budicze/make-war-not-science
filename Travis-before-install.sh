@@ -8,9 +8,10 @@ case "$os" in
     # our dependencies to be able to compile a 32bit binary. Ubuntu...
     chroot="$PWD"/buildroot.i386
     mkdir -p "$chroot$PWD"
-    sudo apt-get install -y debootstrap python-software-properties
+    sudo apt-get install -y debootstrap
     sudo i386 debootstrap --arch=i386 precise "$chroot"
     sudo mount --rbind "$PWD" "$chroot$PWD"
+    sudo i386 chroot "$chroot" apt-get install -qq python-software-properties
     sudo i386 chroot "$chroot" add-apt-repository -y ppa:zoogie/sdl2-snapshots
     sudo i386 chroot "$chroot" add-apt-repository -y ppa:ubuntu-toolchain-r/test
     sudo i386 chroot "$chroot" apt-get update -qq
