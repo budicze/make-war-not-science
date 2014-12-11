@@ -10,9 +10,8 @@ case "${os}" in
     mv buildroot.i386/MakeWarNotScience MakeWarNotScience-linux32
     ;;
   linux64)
-    export CXX="g++-4.8"
     make clean
-    make
+    make -j2 CXX="g++-4.8"
     mv MakeWarNotScience MakeWarNotScience-linux64
     ;;
 esac

@@ -5,13 +5,5 @@ env:
 before_install:
     - "./Travis-before-install.sh $os"
 script:
-    - "./Travis-script.sh"
-deploy:
-  provider: releases
-  api_key:
-    secure: C7KKpG/FesA90T8QBCeJanN0Y/E0NMmKrcnDAa9idGje7hOmqUprUCVwyeH4GLNNDoX3pd+UKmVZV4teGlqf6iLiSKboign3ukEj861m4QLoS+rYb95owrI9hjzepW6UOhUkRSgpQ9CTiEszrPL+8zD+bX1hW1fZ09YOKmG0ZjM=
-  file:
-    - MakeWarNotScience-linux32
-    - MakeWarNotScience-linux64
-  on:
-    repo: budicze/make-war-not-science
+    - "./Travis-script.sh $os"
+    - "./Travis-deploy.sh $os"
