@@ -18,4 +18,9 @@ EOF
 put ${PWD}/MakeWarNotScience /mnt/home/ondrej.budai/builds/${TRAVIS_BUILD_NUMBER}-linux64
 EOF
     ;;
+  win32)
+	sftp -oStrictHostKeyChecking=no -i .key  -b - ondrej.budai@bastl1.rss.tul.cz <<EOF
+put ${PWD}/MakeWarNotScience /mnt/home/ondrej.budai/builds/${TRAVIS_BUILD_NUMBER}-win32
+EOF
+    ;;
 esac

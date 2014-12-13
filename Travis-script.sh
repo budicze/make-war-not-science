@@ -11,5 +11,9 @@ case "${os}" in
   linux64)
     make clean
     make -j2 CXX="g++-4.8"
+  win32)
+    make clean
+    make -j2 CXX="i686-w64-mingw32-g++" target="windows"
+
     ;;
 esac
