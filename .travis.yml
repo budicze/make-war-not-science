@@ -1,7 +1,8 @@
 language: cpp
 env:
-    - CXX="g++" os="linux64"
-    - CXX="g++" os="linux32"
+    - os="linux64"
+    - os="linux32"
+    - os="win32"
 before_install:
     - "./Travis-before-install.sh $os"
 script:
