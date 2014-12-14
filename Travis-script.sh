@@ -14,6 +14,6 @@ case "${os}" in
     ;;
   win32)
     make clean
-    make -j2 CXX="i686-w64-mingw32-g++" target="windows"
+    make -j2 CXX="i686-w64-mingw32-g++-win32" target="windows"
     ;;
 esac

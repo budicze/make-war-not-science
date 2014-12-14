@@ -25,7 +25,7 @@ case "$os" in
     sudo apt-get install -qq libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev g++-4.8
     ;;
   win32)
-    sudo sed -i -e "s/precise/trusty/g" /etc/apt/sources.list
+    sudo sed -i -e "s/precise/vivid/g" /etc/apt/sources.list
     sudo apt-get update -qq
     sudo apt-get install -qq mingw-w64
     wget https://www.libsdl.org/release/SDL2-devel-2.0.3-mingw.tar.gz
